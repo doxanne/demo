@@ -1,0 +1,24 @@
+%h1 任务列表
+= link_to '新建任务', new_mission_path
+%p
+%table
+  %thead
+    %tr
+      %th 任务编号
+      %th 标题
+      %th 内容
+      %th
+      %th
+      %th
+  %tbody
+    - @missions.each do |mission|
+      %tr
+        %td= mission.index
+        %td= mission.title：string
+        %td.mytd= mission.detail
+        %td= link_to '查看', mission
+        %td= link_to '修改', edit_mission_path(mission)
+        %td= link_to '删除', mission, method: :delete, data: { confirm: '是否删除该任务？' }
+%br
+
+

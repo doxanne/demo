@@ -1,0 +1,19 @@
+= form_for @mission do |f|
+  - if @mission.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mission.errors.count, "error")} prohibited this mission from being saved:"
+      %ul
+        - @mission.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :index
+    = f.number_field :index
+  .field
+    = f.label :title：string
+    = f.text_field :title：string
+  .field
+    = f.label :detail
+    = f.text_area :detail
+  .actions
+    = f.submit 'Save'
