@@ -1,19 +1,10 @@
-= form_for @mission do |f|
-  - if @mission.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@mission.errors.count, "error")} prohibited this mission from being saved:"
-      %ul
-        - @mission.errors.full_messages.each do |message|
-          %li= message
+= simple_form_for(@mission) do |f|
+  = f.error_notification
 
-  .field
-    = f.label :index
-    = f.number_field :index
-  .field
-    = f.label :title：string
-    = f.text_field :title：string
-  .field
-    = f.label :detail
-    = f.text_area :detail
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :index,label:'编号',placeholder:'编号',error:'integer',input_html:{maxlength:2},hint:'请填入整数'
+    = f.input :title,placeholder:'请输入标题'
+    = f.input :detail,input_html:{placeholder:'请输入内容',style:'border:1px solid red'},required:true
+    = f.input :detail,as: :radio_buttons,collection:["同意","不同意"],input_html:{selected:'selected'}
+  .form-actions
+    = f.button :submit,value:'保存'

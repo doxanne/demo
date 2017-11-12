@@ -28,7 +28,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.save
-        format.html { redirect_to @mission, notice: "新增了一个任务 时间：#{@mission.updated_at.strftime("%H:%M:%S,%m月%d日%Y年")}" }
+        format.html { redirect_to @mission, notice: 'Mission was successfully created.' }
         format.json { render :show, status: :created, location: @mission }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class MissionsController < ApplicationController
   def update
     respond_to do |format|
       if @mission.update(mission_params)
-        format.html { redirect_to @mission, notice: "更新了任务    时间：#{@mission.updated_at.strftime("%H:%M:%S,%m月%d日%Y年")}"}
+        format.html { redirect_to @mission, notice: 'Mission was successfully updated.' }
         format.json { render :show, status: :ok, location: @mission }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class MissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mission_params
-      params.require(:mission).permit(:index, :title：string, :detail)
+      params.require(:mission).permit(:index, :title, :detail)
     end
 end

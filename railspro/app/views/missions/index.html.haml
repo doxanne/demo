@@ -1,24 +1,27 @@
-%h1 任务列表
-= link_to '新建任务', new_mission_path
+/ %h1{:style => "border-bottom:1px solid black;"} 任务列表 
+%h1{:style => "border-bottom:1px solid black;text-align:center"} 任务列表 
+= link_to '+新增任务', new_mission_path
 %p
 %table
   %thead
     %tr
-      %th 任务编号
+      %th 编号
       %th 标题
       %th 内容
+      %th 操作
+      %th 
       %th
-      %th
-      %th
+
   %tbody
     - @missions.each do |mission|
       %tr
         %td= mission.index
-        %td= mission.title：string
-        %td.mytd= mission.detail
-        %td= link_to '查看', mission
-        %td= link_to '修改', edit_mission_path(mission)
-        %td= link_to '删除', mission, method: :delete, data: { confirm: '是否删除该任务？' }
+        %td= mission.title
+        %td= mission.detail
+        %td= link_to '查看', mission, target:'_blank', value: '查看'
+        %td= link_to '编辑', edit_mission_path(mission)
+        %td= link_to '删除', mission, method: :delete, data: { confirm: 'Are you sure?' }
+
 %br
 
 

@@ -2,10 +2,10 @@
 
 one:
   index: 1
-  title：string: MyString
+  title: MyString
   detail: MyText
 
 two:
   index: 1
-  title：string: MyString
+  title: MyString
   detail: MyText

@@ -4,21 +4,25 @@ en:
     "no": 'No'
     required:
       text: 'required'
-      mark: '*'
+      mark: '必填'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
+    labels:
+      defaults:
+        password: '密码'
+      mission:
+        new:
+          index: '任务编号'
+          title: '标题'
+          detail: '内容'
+        edit:
+          email: '邮箱'
+        index:
+          index: '任务编号'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'

@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b 任务编号:
+  %b Index:
   = @mission.index
 %p
-  %b 标题：string:
-  = @mission.title：string
+  %b Title:
+  = @mission.title
 %p
-  %b 内容:
+  %b Detail:
   = @mission.detail
 
-= link_to '修改', edit_mission_path(@mission)
+= link_to 'Edit', edit_mission_path(@mission)
 \|
-= link_to '返回任务列表', missions_path
+= link_to 'Back', missions_path
